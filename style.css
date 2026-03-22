@@ -1,0 +1,467 @@
+/* 1. Variables for easy theme management */
+:root {
+    --primary-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --accent-color: #1abc9c;
+    --text-dark: #2c3e50;
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* 2. Body & Background */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: var(--text-dark);
+}
+
+/* 3. Header with New Background Gradient */
+header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); /* Adds a stylish diagonal cut */
+}
+
+.profile-img {
+    width: 220px; /* Larger as requested */
+    height: 220px;
+    border-radius: 50%;
+    border: 6px solid rgba(255,255,255,0.2);
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* 4. Navigation bar */
+nav {
+    background: #1c2833;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    background: var(--accent-color);
+}
+
+/* 5. Content Cards */
+.card {
+    background: white;
+    max-width: 950px;
+    margin: -40px auto 40px; /* Pulls first card onto the header */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+}
+
+h2 {
+    color: #203a43;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+/* 6. Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f8f9fa;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 7. Innovation Project Grid */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-box {
+    background: #fdfdfd;
+    border: 1px solid #efefef;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-box:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #1c2833;
+    color: #bdc3c7;
+}
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --accent: #1abc9c;
+    --highlight: #fdbb2d;
+    --transition-speed: 0.4s;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+/* --- 1. PICTURE HOVER EFFECT --- */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(26, 188, 156, 0.4);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1) rotate(3deg); /* Slightly grows and tilts */
+    box-shadow: 0 0 30px rgba(26, 188, 156, 0.8); /* Glow intensifies */
+    cursor: pointer;
+}
+
+nav {
+    background: #1c2833;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--highlight);
+}
+
+/* --- 2. SECTION (CARD) HOVER EFFECT --- */
+.card {
+    background: white;
+    max-width: 950px;
+    margin: -30px auto 40px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--accent);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Lifts the entire section up */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Shadow deepens for depth */
+}
+
+.achievement-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.achievement-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Achievement Image Hover */
+.achievement-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.achievement-img:hover {
+    transform: scale(1.05);
+}
+
+/* Project Item Hover */
+.project-item {
+    background: #fafafa;
+    padding: 20px;
+    border-left: 4px solid var(--highlight);
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-item:hover {
+    background: #fff;
+    transform: translateX(10px); /* Slides slightly to the right */
+}
+
+.pdf-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--primary-gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.pdf-btn:hover {
+    background: var(--accent);
+    letter-spacing: 1px; /* Expands slightly for effect */
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #1c2833;
+    color: white;
+}
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --accent: #1abc9c;
+    --highlight: #fdbb2d;
+    --anim: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+/* --- INTERACTIVE PICTURE --- */
+.profile-img {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 5px solid var(--accent);
+    object-fit: cover;
+    transition: transform var(--anim), box-shadow var(--anim);
+}
+
+.profile-img:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 25px var(--accent);
+}
+
+nav { background: #1c2833; position: sticky; top: 0; z-index: 100; }
+nav ul { display: flex; justify-content: center; list-style: none; padding: 0; }
+nav a { color: white; text-decoration: none; padding: 15px 25px; font-weight: bold; transition: 0.3s; }
+nav a:hover { color: var(--highlight); }
+
+/* --- INTERACTIVE SECTIONS (CARDS) --- */
+.card {
+    background: white;
+    max-width: 950px;
+    margin: -30px auto 40px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--accent);
+    transition: transform var(--anim), box-shadow var(--anim);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.achievement-row { display: flex; align-items: center; gap: 40px; margin-top: 20px; }
+.achievement-row.reverse { flex-direction: row-reverse; }
+
+.achievement-img {
+    width: 280px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.achievement-img:hover { transform: scale(1.05); }
+
+/* Project Grid & Items */
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
+.project-item {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--highlight);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateX(8px);
+    background: #fff;
+}
+
+.btn-small { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: bold; }
+footer { text-align: center; padding: 40px; background: #1c2833; color: white; }
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --accent: #1abc9c;
+    --highlight: #fdbb2d;
+    --transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color: #333; }
+
+/* Interactive Header & Nav */
+header { background: var(--bg-gradient); color: white; padding: 60px 20px; text-align: center; }
+.profile-img { 
+    width: 180px; height: 180px; border-radius: 50%; border: 4px solid var(--accent); 
+    transition: var(--transition);
+}
+.profile-img:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 0 20px var(--accent); }
+
+nav { background: #1c2833; position: sticky; top: 0; z-index: 1000; }
+nav ul { display: flex; justify-content: center; list-style: none; padding: 0; margin: 0; }
+nav a { color: white; text-decoration: none; padding: 15px 25px; font-weight: bold; transition: 0.3s; }
+nav a:hover, .active { color: var(--highlight); border-bottom: 2px solid var(--highlight); }
+
+/* Card Animations */
+.card {
+    background: white; max-width: 900px; margin: 30px auto; padding: 40px; 
+    border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--accent); transition: var(--transition);
+}
+.card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+
+/* Content Layouts */
+.achievement-row { display: flex; align-items: center; gap: 30px; margin: 20px 0; }
+.achievement-row.reverse { flex-direction: row-reverse; }
+.achievement-img { width: 250px; border-radius: 10px; transition: 0.3s; }
+.achievement-img:hover { transform: scale(1.05); }
+
+.detail-box { padding: 15px; border-left: 4px solid var(--accent); background: #fafafa; margin-bottom: 15px; }
+
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+.project-item { 
+    background: #fdfdfd; padding: 15px; border: 1px solid #eee; border-radius: 8px; 
+    transition: 0.3s; border-left: 4px solid var(--highlight);
+}
+.project-item:hover { transform: translateX(10px); background: #fff; }
+
+.btn-pdf { color: var(--accent); font-weight: bold; text-decoration: none; font-size: 0.9rem; }
+
+/* Add these new rules to your existing style.css */
+
+.tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #ecf0f1;
+    font-style: italic;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+.institution {
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* Enhancing the Active Nav Link */
+nav a.active {
+    border-bottom: 3px solid var(--highlight);
+    color: var(--highlight);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #1c2833;
+    color: #bdc3c7;
+    margin-top: 50px;
+}
+
+/* Ensure consistent image sizing for the internship/volunteering images */
+.achievement-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover; /* This prevents the images from looking stretched */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.achievement-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}

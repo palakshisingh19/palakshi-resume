@@ -492,3 +492,45 @@ html {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Container for the project card */
+.project-item {
+    position: relative; /* Necessary to anchor the watermark */
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--highlight);
+    overflow: hidden; /* Keeps the watermark inside the card edges */
+    z-index: 1; /* Establishes a stack */
+}
+
+/* The Watermark Engine */
+.project-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; /* Adjust size of icon */
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+    /* WATERMARK SETTINGS */
+    opacity: 0.08; /* Very light so it doesn't cover text */
+    z-index: -1;   /* Places it BEHIND the text */
+    pointer-events: none; /* User can click "through" it to hit links */
+}
+
+/* Individual Background Assignments */
+.aaranya::before { background-image: url('aaranya-wm.jpeg'); }
+.paysolve::before { background-image: url('paysolve-wm.jpeg'); }
+.sportsync::before { background-image: url('sportsync-wm.jpeg'); }
+.lingolink::before { background-image: url('lingolink-wm.jpeg'); }
+.keratech::before { background-image: url('keratech-wm.jpeg'); }
+.solar::before { background-image: url('solar-wm.jpeg'); }
+.activage::before { background-image: url('activage-wm.jpeg'); }
+.novel::before { background-image: url('novel-wm.jprg'); }
+.intach::before { background-image: url('intach-wm.jpeg'); }
+.feedish::before { background-image: url('feedish-wm.jpeg'); }

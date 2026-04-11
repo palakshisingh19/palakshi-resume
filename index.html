@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palakshi Singh | Home</title>
+    <title>Palakshi Singh | Side-Quest Specialist</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <video autoplay muted loop id="video-bg"><source src="hero-bg.mp4" type="video/mp4"></video>
+
     <header>
         <div class="header-content">
             <img src="profile.jpeg" alt="Palakshi Singh" class="profile-img">
-            <h1>Palakshi Singh</h1>
-            <p class="tagline">Strategic Thinker by Day, Content Creator by Night, Side-Quest Specialist by Choice.</p>
+            <h1 class="gradient-text">Palakshi Singh</h1>
+            <p class="tagline">Strategic Thinker • Content Creator • Side-Quest Specialist</p>
         </div>
     </header>
 
@@ -24,57 +26,43 @@
         </ul>
     </nav>
 
+    <button id="theme-toggle">🌓</button>
+
     <main>
-        <section class="card">
+        <section class="card reveal">
             <h2>About</h2>
-            <div class="about-content">
-                <p>I don’t just "do" things; I immerse myself in them. Currently, I am navigating the intense but rewarding world of <strong>dual degrees</strong>, balancing a rigorous commerce curriculum at Delhi University with a data-driven business program at IIM Bangalore. My ambition isn't just to earn degrees, but to build a multifaceted career where business strategy meets digital storytelling.</p>
-                <p>When I’m not deep-diving into financial models or consulting frameworks, you’ll find me exploring my "side quests" from professional content creation and internships to volunteering for environmental causes. I am fueled by a restless passion to create, lead, and constantly evolve. I believe that being 'professional' doesn't mean being robotic; it means bringing your authentic, high-energy self to everything you build.</p>
-            </div>
+            <p>I don’t just do things; I immerse myself in them. Currently, I am navigating the intense but rewarding world of dual degrees, balancing a rigorous commerce curriculum at Delhi University with a data-driven business program at IIM Bangalore. My ambition isn't just to earn degrees, but to build a multifaceted career where business strategy meets digital storytelling.
+
+When I’m not deep-diving into financial models or consulting frameworks, you’ll find me exploring my side quests from professional content creation and internships to volunteering for environmental causes. I am fueled by a restless passion to create, lead, and constantly evolve. I believe that being professional doesn't mean being robotic; it means bringing your authentic, high-energy self to everything you build.</p>
         </section>
-        <section class="card">
-            <h2>Education</h2>
-            
-            <div class="achievement-row">
-                <div class="achievement-text">
-                    <h3>BBA - Digital Business & Entrepreneurship</h3>
-                    <p class="institution">IIM Bangalore | 2025 - 2028</p>
-                    <p>Engaged in a cutting-edge program focused on the intersection of digital transformation, data analytics, and entrepreneurial leadership. This degree allows me to apply high-level business frameworks to real-world digital problems.</p>
-                </div>
-                <img src="iimb.jpeg" alt="IIM Bangalore" class="achievement-img">
-            </div>
 
-            <div class="achievement-row reverse">
-                <div class="achievement-text">
-                    <h3>Bachelors of Commerce (Honours)</h3>
-                    <p class="institution">Shaheed Bhagat Singh College, Delhi University | 2025 - 2028</p>
-                    <p>Developing a deep foundation in finance and trade. Currently serving as a <strong>Trainee Consultant at 180 Degrees Consulting</strong>, where I work on providing social impact consulting to non-profits and social enterprises.</p>
-                </div>
-                <img src="sbsc.jpeg" alt="SBSC Delhi University" class="achievement-img">
-            </div>
+        <section class="card reveal stats-container">
+            <div class="stat-item"><h3>95.6%</h3><p>Academic Peak [cite: 2]</p></div>
+            <div class="stat-item"><h3>200+</h3><p>Students Managed [cite: 19]</p></div>
+            <div class="stat-item"><h3>10+</h3><p>Tech Ventures</p></div>
+        </section>
 
-            <div class="achievement-row">
-                <div class="achievement-text">
-                    <h3>Senior Secondary Education</h3>
-                    <p class="institution">Maharaja Sawai Bhawani Singh School | 2024 - 2025</p>
-                    <p>Graduated with 93.8% (Commerce + Math). During this phase, I balanced high academic rigor with my role as Sports Head, learning the art of discipline and time management.</p>
-                </div>
-                <img src="class12.jpeg" alt="Senior Secondary" class="achievement-img">
-            </div>
-
-            <div class="achievement-row reverse">
-                <div class="achievement-text">
-                    <h3>Secondary Education</h3>
-                    <p class="institution">Maharaja Sawai Bhawani Singh School | 2022 - 2023</p>
-                    <p>Achieved a 95.6% score, emerging as the <strong>School Topper</strong>. My academic journey here was marked by a 98% in Social Science, reflecting my early interest in understanding societal and economic structures.</p>
-                </div>
-                <img src="class10.jpeg" alt="Secondary Education" class="achievement-img">
-            </div>
+        <section class="card reveal">
+            <h2>Case Study: SportSync Venture</h2>
+            <p><strong>The Challenge:</strong> Connecting athletes with scouts while managing under-utilized sports venues.</p>
+            <p><strong>The Solution:</strong> An integrated digital ecosystem for talent scouting and venue management. Developed for a national-level business plan competition.</p>
+            <a href="projects.html#sportsync" class="btn">View Full Strategy</a>
         </section>
     </main>
-    
-    <footer>
-        <p>Palakshi Singh | Pursuing Excellence across DU & IIMB</p>
-    </footer>
+
+    <script>
+        // DARK MODE LOGIC
+        const toggle = document.getElementById('theme-toggle');
+        toggle.onclick = () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+        };
+
+        // SCROLL REVEAL LOGIC
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('reveal'); });
+        });
+        document.querySelectorAll('.card').forEach(card => observer.observe(card));
+    </script>
 </body>
 </html>

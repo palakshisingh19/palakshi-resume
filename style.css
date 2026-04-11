@@ -492,39 +492,3 @@ html {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
-/* This creates the faded background layer */
-.project-item::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px; /* Size of the icon */
-    height: 120px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    
-    /* THE WATERMARK EFFECT */
-    opacity: 0.08; /* Very light/faded */
-    z-index: 0;    /* Sits behind text */
-    pointer-events: none; /* Allows clicking 'through' the image to the PDF link */
-}
-
-/* Ensures text and links stay on top of the watermark */
-.project-item h3, .project-item p, .project-item a {
-    position: relative;
-    z-index: 1;
-}
-
-.aaranya::before { background-image: url('aaranya-wm.jpeg'); }
-.paysolve::before { background-image: url('paysolve-wm.jpeg'); }
-.sportsync::before { background-image: url('sportsync-wm.jpeg'); }
-.lingolink::before { background-image: url('lingolink-wm.jpeg'); }
-.keratech::before { background-image: url('keratech-wm.jpeg'); }
-.solar::before { background-image: url('solar-wm.jpeg'); }
-.activage::before { background-image: url('activage-wm.jpeg'); }
-.novel::before { background-image: url('novel-wm.jpeg'); }
-.intach::before { background-image: url('intach-wm.jpeg'); }
-.feedish::before { background-image: url('feedish-wm.jpeg'); }

@@ -564,3 +564,93 @@ html {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+:root {
+    /* Light Mode Variables */
+    --bg-color: #f4f7f6;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --text-color: #1c2833;
+    --primary-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --accent: #1abc9c;
+    --highlight: #fdbb2d;
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] {
+    /* Dark Mode Variables */
+    --bg-color: #0b0e11;
+    --card-bg: rgba(28, 40, 51, 0.85);
+    --text-color: #ecf0f1;
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* { box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+
+html { scroll-behavior: smooth; }
+
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    margin: 0; 
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+}
+
+/* HERO VIDEO BACKGROUND */
+#video-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: -1; filter: brightness(40%);
+}
+
+/* ANIMATED GRADIENT TEXT */
+.gradient-text {
+    background: linear-gradient(to right, var(--accent), var(--highlight), var(--accent));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+}
+@keyframes shine { to { background-position: 200% center; } }
+
+/* GLASSMORPHISM CARDS */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-top: 5px solid var(--accent);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1000px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    opacity: 0; transform: translateY(30px); /* For Scroll Animation */
+}
+
+/* SCROLL ANIMATION CLASS */
+.reveal { opacity: 1; transform: translateY(0); transition: all 0.8s ease-out; }
+
+/* PROJECT WATERMARKS */
+.project-item {
+    position: relative; overflow: hidden;
+    background-size: 40px; background-repeat: no-repeat; background-position: 95% 10%;
+}
+.sustainability { background-image: url('leaf-bg.png'); }
+.fintech { background-image: url('coin-bg.png'); }
+
+/* IMPACT STATS */
+.stats-container { display: flex; justify-content: space-around; text-align: center; padding: 20px; }
+.stat-item h3 { font-size: 2.5rem; color: var(--highlight); margin: 0; }
+
+/* DARK MODE TOGGLE */
+#theme-toggle {
+    position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+    padding: 15px; border-radius: 50%; cursor: pointer;
+    background: var(--accent); border: none; font-size: 1.5rem;
+}
+
+/* CLEANUP: NO BORDERS FOR BRIGHTRAYS */
+.no-border { border: none !important; box-shadow: none !important; }
+
+/* INTERACTIVE TIMELINE */
+.timeline { border-left: 3px solid var(--accent); padding-left: 20px; position: relative; }
+.timeline-item:hover { transform: translateX(10px); color: var(--accent); cursor: pointer; }

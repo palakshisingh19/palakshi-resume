@@ -531,6 +531,24 @@ html {
 .keratech::before { background-image: url('keratech-wm.jpeg'); }
 .solar::before { background-image: url('solar-wm.jpeg'); }
 .activage::before { background-image: url('activage-wm.jpeg'); }
-.novel::before { background-image: url('novel-wm.jprg'); }
+.novel::before { background-image: url('novel-wm.jpeg'); }
 .intach::before { background-image: url('intach-wm.jpeg'); }
 .feedish::before { background-image: url('feedish-wm.jpeg'); }
+
+
+/* FORCE GRID LAYOUT */
+.project-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 25px !important;
+    margin-top: 30px !important;
+    width: 100% !important;
+}
+
+/* ENSURE ITEMS STAY WITHIN GRID */
+.project-item {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-height: 200px !important;
+}
